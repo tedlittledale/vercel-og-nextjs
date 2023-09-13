@@ -16,15 +16,53 @@ const groupHash = {
 };
 
 export default function Page(props) {
-  const { groupname, groupsubname, image } = props;
+  const { groupname, groupsubname, image, codename } = props;
   console.log({ groupname, groupsubname, image });
   return (
     <>
       <Head>
-        <meta name="og:title" content={`${groupname}`} />
-        <meta name="og:description" content={`${groupsubname}`} />
         <meta
-          name="og:image"
+          name="description"
+          content={`${groupname}`} />
+        />
+
+        <meta
+          property="og:url"
+          content={`https://vercel-og-nextjs-flame-five.vercel.app/?name=${codename}`}
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content={`${groupname}`} />
+        />
+        <meta
+          property="og:description"
+          content={`${groupname}`} />
+        />
+        <meta
+          property="og:image"
+          content={`https://vercel-og-nextjs-flame-five.vercel.app/api/hubbub?groupname=${groupname}&groupsubname=${groupsubname}&image=${image}`}
+        />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:domain"
+          content="vercel-og-nextjs-flame-five.vercel.app"
+        />
+        <meta
+          property="twitter:url"
+          content={`https://vercel-og-nextjs-flame-five.vercel.app/?name=${codename}`}
+        />
+        <meta
+          name="twitter:title"
+          content={`${groupname}`} />
+        />
+        <meta
+          name="twitter:description"
+          content={`${groupsubname}`} 
+        />
+        <meta
+          name="twitter:image"
           content={`https://vercel-og-nextjs-flame-five.vercel.app/api/hubbub?groupname=${groupname}&groupsubname=${groupsubname}&image=${image}`}
         />
       </Head>
@@ -49,6 +87,6 @@ export function getServerSideProps(context) {
   const { groupname, groupsubname, image } = groupHash[name];
 
   return {
-    props: { groupname, groupsubname, image },
+    props: { groupname, groupsubname, image, codename:name },
   };
 }
