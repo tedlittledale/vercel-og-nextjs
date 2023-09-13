@@ -56,7 +56,7 @@ export default function Page(props) {
         <meta
           name="twitter:title"
           content={`${groupname}`} />
-        />
+        
         <meta
           name="twitter:description"
           content={`${groupsubname}`} 
