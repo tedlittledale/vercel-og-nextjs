@@ -1,6 +1,9 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 export default function Page() {
+  const router = useRouter();
+  const { groupname, groupsubname, image } = router.query;
   return (
     <div>
       <Head>
@@ -15,11 +18,18 @@ export default function Page() {
             // https://vercel.com/docs/concepts/projects/environment-variables
             `${
               process.env.VERCEL_URL ? "https://" + process.env.VERCEL_URL : ""
-            }/api/vercel`
+            }/api/hubbub?groupname=${groupname}&groupsubname=${groupsubname}&image=${image}`
           }
         />
       </Head>
-      <h1>A page with Open Graph Image..</h1>
+      <h1>Demoing Dynamic Open Graph Images</h1>
+      <h2>{groupname}</h2>
+      <h3>{groupsubname}</h3>
+
+      <img
+        src={`/api/hubbub?groupname=${groupname}&groupsubname=${groupsubname}&image=${image}`}
+        alt="Vercel Edge Network"
+      />
     </div>
   );
 }
