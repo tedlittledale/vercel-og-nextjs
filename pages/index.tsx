@@ -21,24 +21,17 @@ export default function Page(props) {
   return (
     <>
       <Head>
-        <meta
-          name="description"
-          content={`${groupname}`} />
-        />
+        <meta name="description" content={`${groupname}`} />
 
         <meta
           property="og:url"
           content={`https://vercel-og-nextjs-flame-five.vercel.app/?name=${codename}`}
         />
         <meta property="og:type" content="website" />
-        <meta
-          property="og:title"
-          content={`${groupname}`} />
-        />
-        <meta
-          property="og:description"
-          content={`${groupname}`} />
-        />
+        <meta property="og:title" content={`${groupname}`} />
+
+        <meta property="og:description" content={`${groupname}`} />
+
         <meta
           property="og:image"
           content={`https://vercel-og-nextjs-flame-five.vercel.app/api/hubbub?groupname=${groupname}&groupsubname=${groupsubname}&image=${image}`}
@@ -53,14 +46,9 @@ export default function Page(props) {
           property="twitter:url"
           content={`https://vercel-og-nextjs-flame-five.vercel.app/?name=${codename}`}
         />
-        <meta
-          name="twitter:title"
-          content={`${groupname}`} />
-        
-        <meta
-          name="twitter:description"
-          content={`${groupsubname}`} 
-        />
+        <meta name="twitter:title" content={`${groupname}`} />
+
+        <meta name="twitter:description" content={`${groupsubname}`} />
         <meta
           name="twitter:image"
           content={`https://vercel-og-nextjs-flame-five.vercel.app/api/hubbub?groupname=${groupname}&groupsubname=${groupsubname}&image=${image}`}
@@ -87,6 +75,6 @@ export function getServerSideProps(context) {
   const { groupname, groupsubname, image } = groupHash[name];
 
   return {
-    props: { groupname, groupsubname, image, codename:name },
+    props: { groupname, groupsubname, image, codename: name },
   };
 }
