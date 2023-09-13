@@ -61,7 +61,7 @@ export default async function handler(req: NextRequest) {
                 backgroundImage:
                   "linear-gradient(90deg, rgb(0, 124, 240), rgb(0, 223, 216))",
                 backgroundClip: "text",
-                "-webkit-background-clip": "text",
+                WebkitBackgroundClip: "text",
                 color: "transparent",
               }}
             >
@@ -83,7 +83,7 @@ export default async function handler(req: NextRequest) {
                 backgroundImage:
                   "linear-gradient(90deg, rgb(255, 77, 77), rgb(249, 203, 40))",
                 backgroundClip: "text",
-                "-webkit-background-clip": "text",
+                WebkitBackgroundClip: "text",
                 color: "transparent",
               }}
             >
